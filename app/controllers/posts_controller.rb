@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+
   def show
     #erb :show
     #render :show
@@ -8,6 +9,10 @@ class PostsController < ApplicationController
   def index
     page = params[:page] || 1
     @posts = self.get_page(page)
+  end
+
+  def new
+    render :new
   end
 
   protected
