@@ -1,0 +1,5 @@
+<% @posts.each do |p| %>
+	<h2><%=p.title%></h1>
+	<h3>Written at: <%=p.written_at%></h1>
+	<%= simple_format p.content %>
+<%end%>
