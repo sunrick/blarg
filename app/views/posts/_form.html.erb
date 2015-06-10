@@ -1,22 +1,19 @@
 <h2> title </h2>
-<%= form_tag('/posts', method: method) do %>
+<%= form_tag( @action, method: @http_verb) do %>
 	<div>
 		<%= label_tag(:title, "Title: ") %>
-		<%= text_field_tag(:title, post.nil? ? nil : post.title, size:40, maxlength:40) %>
+		<%= text_field_tag(:title, @post.title, size:40, maxlength:40) %>
 	</div>
 
 	<div>
 		<%= label_tag(:tags, "Tags: ") %>
-		<%= text_field_tag(:tags, post.nil? ? nil : tags, size: 40) %>
+		<%= text_field_tag(:tags, @tags, size: 40) %>
 	</div>
 	<div>
 		<%= label_tag(:content, "Content: ") %>
 		<br>
-		<%= text_area_tag(:content, post.nil? ? nil : post.content, rows:20, cols:80) %>
+		<%= text_area_tag(:content, @post.content, rows:20, cols:80) %>
 	</div>
- 	<% if !post.nil? %>
-		<%= hidden_field_tag(:id,post.id) %>
-	<%end%>
 	<div><%= submit_tag 'Save' %></div>
 <% end %>
 <br>
