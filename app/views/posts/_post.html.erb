@@ -2,4 +2,5 @@
 	<h2><%= link_to_unless_current post.title, post_path(post) %></h2>
 	<h3>Written at: <%=post.written_at%></h3>
 	<%= simple_format post.content %>
+	<%= link_to "Edit this post", edit_post_path(post) %>
 </div>
